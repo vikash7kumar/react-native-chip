@@ -19,7 +19,7 @@ const Chips = (props) => {
             return(
                 <Text style={[returnStyles().chipCloseBtnTxt,chipCloseStyle]}>x</Text>
             )
-        }       
+        }
     }
     return (
         <TouchableOpacity  onPress={onPress}>

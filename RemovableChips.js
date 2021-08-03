@@ -19,8 +19,6 @@ class RemovableChips extends React.Component {
             chips: (nextProps.initialChips) ? nextProps.initialChips : []
         });
     }
-    handleFocus = () => { this.setState({ isFocused: true }) }
-    handleChangeText = (text) => { this.setState({ inputText: text }) }
     removeChip = (index) => {
         const newArray = [...this.state.chips]
         newArray.splice(index, 1);
@@ -69,33 +67,12 @@ class RemovableChips extends React.Component {
         ));
         return (
             <View>
-                <View style={{ paddingTop: 18, marginTop: 15 }}>
-                    <Text style={labelStyle}>
-                        {inputLabel}
-                    </Text>
-                    <TextInput
-                        style={styles.textInput}
-                        onFocus={this.handleFocus}
-                        onChangeText={(text) => this.handleChangeText(text)}
-                        onSubmitEditing={this.handleBlur}
-                        value={inputText}
-                    />
-                </View>
-                <View style={{ flexDirection: 'row', flexWrap: 'wrap', alignItems: 'center' }}>
-                    {chips}
-                </View>
+              <View style={{ flexDirection: 'row', flexWrap: 'wrap', alignItems: 'center' }}>
+                  {chips}
+              </View>
             </View>
         )
     }
 }
-const styles = StyleSheet.create({
-    textInput: {
-        height: 40,
-        fontSize: 20,
-        padding: 10,
-        color: '#000',
-        
-    }
-});
 
 export default RemovableChips;
